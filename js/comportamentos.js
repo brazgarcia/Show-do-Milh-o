@@ -20,7 +20,7 @@ function tratar_evento() {
         var opcao_selecionada = this.pergunta1000.value;
 
         if (opcao_selecionada == opcao_correta) {
-            tocar_audio('pergunta-2000'); //retirei o "-" antes de 2000.
+            tocar_audio('pergunta-2000'); 
             document.getElementById("pergunta1000").style.display = "none";
             document.getElementById("pergunta2000").style.display = "block";
         } else {
@@ -41,9 +41,9 @@ function tratar_evento() {
         if (opcao_selecionada == opcao_correta) {
             tocar_audio('pergunta-3000');
         } else {
-            document.getElementById("pergunta2000").style.display = none;
+            document.getElementById("pergunta2000").style.display = 'none';
             tocar_audio('errou');
-            reiniciar_jogo
+            reiniciar_jogo();
         }
 
         return false;
@@ -89,5 +89,6 @@ function tocar_audio(qual_tocar) {
         break; 
 
     }
+
     audio.play();
 }
